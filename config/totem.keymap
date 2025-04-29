@@ -33,26 +33,26 @@
 
         macro_0: macro0 {
             compatible = "zmk,behavior-macro";
-            bindings = <&kp RALT &kp Q>;
+            bindings = <&kp RA(Q)>;
             #binding-cells = <0>;
             label = "macro0";
         };
 
         macro_1: macro1 {
             compatible = "zmk,behavior-macro";
-            bindings = <&kp RALT &kp P>;
+            bindings = <&kp RA(P)>;
             #binding-cells = <0>;
         };
 
         macro_2: macro2 {
             compatible = "zmk,behavior-macro";
-            bindings = <&kp RALT &kp Y>;
+            bindings = <&kp RA(Y)>;
             #binding-cells = <0>;
         };
 
         macro_3: macro3 {
             compatible = "zmk,behavior-macro";
-            bindings = <&kp RALT &kp S>;
+            bindings = <&kp RA(S)>;
             #binding-cells = <0>;
         };
 
