@@ -35,6 +35,7 @@
             compatible = "zmk,behavior-macro";
             bindings = <&kp RALT &kp Q>;
             #binding-cells = <0>;
+            label = "macro0";
         };
 
         macro_1: macro1 {
