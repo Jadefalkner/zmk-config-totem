@@ -30,26 +30,69 @@
 / {
     behaviors {
         // --- Makros ---
-        macro_0: macro { compatible = "zmk,behavior-macro"; bindings = <&kp RALT &kp Q &kp RALT>; };
-        macro_1: macro { compatible = "zmk,behavior-macro"; bindings = <&kp RALT &kp P &kp RALT>; };
-        macro_2: macro { compatible = "zmk,behavior-macro"; bindings = <&kp RALT &kp Y &kp RALT>; };
-        macro_3: macro { compatible = "zmk,behavior-macro"; bindings = <&kp RALT &kp S &kp RALT>; };
-        macro_4: macro { compatible = "zmk,behavior-macro"; bindings = <&macro_text 49pc!TVc>; };
-        macro_5: macro { compatible = "zmk,behavior-macro"; bindings = <&kp LCTRL &kp LALT &kp DELETE &kp LCTRL &kp LALT &kp DELETE>; };
+
+        macro_0: macro0 {
+            compatible = "zmk,behavior-macro";
+            bindings = <&kp RALT &kp Q>;
+            #binding-cells = <0>;
+        };
+
+        macro_1: macro1 {
+            compatible = "zmk,behavior-macro";
+            bindings = <&kp RALT &kp P>;
+            #binding-cells = <0>;
+        };
+
+        macro_2: macro2 {
+            compatible = "zmk,behavior-macro";
+            bindings = <&kp RALT &kp Y>;
+            #binding-cells = <0>;
+        };
+
+        macro_3: macro3 {
+            compatible = "zmk,behavior-macro";
+            bindings = <&kp RALT &kp S>;
+            #binding-cells = <0>;
+        };
 
         // --- Tap Dance ---
-        td_0: behavior_tap_dance { compatible = "zmk,behavior-tap-dance"; tapping-term-ms = <170>; bindings = <&kp ESCAPE>, <&kp LSHIFT>; };
-        td_1: behavior_tap_dance { compatible = "zmk,behavior-tap-dance"; tapping-term-ms = <140>; bindings = <&kp S>, <&macro 3>; };
-        td_2: behavior_tap_dance { compatible = "zmk,behavior-tap-dance"; tapping-term-ms = <170>; bindings = <&kp A>, <&macro 0>; };
-        td_3: behavior_tap_dance { compatible = "zmk,behavior-tap-dance"; tapping-term-ms = <170>; bindings = <&kp O>, <&macro 1>; };
-        td_4: behavior_tap_dance { compatible = "zmk,behavior-tap-dance"; tapping-term-ms = <170>; bindings = <&kp U>, <&macro 2>; };
-        td_6: behavior_tap_dance { compatible = "zmk,behavior-tap-dance"; tapping-term-ms = <135>; bindings = <&kp P>, <&macro 4>; };
+
+        td_0: behavior_tap_dance0 {
+            compatible = "zmk,behavior-tap-dance";
+            tapping-term-ms = <170>;
+            bindings = <&kp LEFT_SHIFT>, <&kp LEFT_GUI>, <&kp LEFT_ALT>;
+        };
+
+        td_1: behavior_tap_dance1 {
+            compatible = "zmk,behavior-tap-dance";
+            tapping-term-ms = <140>;
+            bindings = <&kp S>, <&macro_3>;
+        };
+
+        td_2: behavior_tap_dance2 {
+            compatible = "zmk,behavior-tap-dance";
+            tapping-term-ms = <170>;
+            bindings = <&kp A>, <&macro_0>;
+        };
+
+        td_3: behavior_tap_dance3 {
+            compatible = "zmk,behavior-tap-dance";
+            tapping-term-ms = <170>;
+            bindings = <&kp O>, <&macro_1>;
+        };
+
+        td_4: behavior_tap_dance4 {
+            compatible = "zmk,behavior-tap-dance";
+            tapping-term-ms = <170>;
+            bindings = <&kp U>, <&macro_2>;
+        };
     };
 
     combos {
         compatible = "zmk,combos";
+        q
 
-      q  combo_esc {
+        combo_esc {
             timeout-ms = <50>;
             key-positions = <0 1>;
             bindings = <&kp ESC>;
@@ -61,6 +104,9 @@
             key-positions = <28 29>;
             layers = <0>;
         };
+    };
+
+    macros {
     };
 
     keymap {
@@ -85,10 +131,10 @@
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-                &kp Q       &kp W       &kp E            &kp R        &kp T        &kp Z    &kp U        &kp I        &kp O       &kp P
-                &mt LGUI A  &mt LALT S  &mt LCTRL D      &mt LSHFT F  &kp G        &kp H    &mt RSHFT J  &mt RCTRL K  &mt RALT L  &mt RGUI SEMICOLON
-&kp LEFT_SHIFT  &kp Y       &kp X       &kp C            &kp V        &kp B        &kp N    &kp M        &kp COMMA    &kp DOT     &kp MINUS           &kp SLASH
-                                        &mt LC(DEL) DEL  &lt 2 TAB    &kp SPACE    &kp RET  &to 1        &kp BSPC
+       &kp Q  &kp W  &kp E            &kp R      &kp T        &kp Z    &td_4          &kp I      &td_3    &kp P
+       &td_2  &td_1  &kp D            &kp F      &kp G        &kp H    &kp J          &kp K      &kp L    &kp SEMI
+&td_0  &kp Y  &kp X  &kp C            &kp V      &kp B        &kp N    &kp M          &kp COMMA  &kp DOT  &kp MINUS  &kp SLASH
+                     &mt LC(DEL) DEL  &lt 2 TAB  &kp SPACE    &kp RET  &kp BACKSPACE  &mo 1
             >;
         };
 
@@ -111,10 +157,10 @@
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-               &kp ESC    &trans    &kp UP            &trans     &kp HOME        &kp PG_UP  &kp KP_N7  &kp KP_N8        &kp KP_N9  &kp KP_PLUS
-               &kp LSHFT  &kp LEFT  &kp DOWN          &kp RIGHT  &kp END         &kp PG_DN  &kp KP_N4  &kp KP_N5        &kp KP_N6  &kp KP_MINUS
-&kp LA(ENTER)  &kp DEL    &trans    &trans            &trans     &kp CAPS        &trans     &kp KP_N1  &kp KP_N2        &kp KP_N3  &kp KP_MULTIPLY  &kp KP_EQUAL
-                                    &kp LS(LEFT_GUI)  &trans     &kp LEFT_GUI    &mo 3      &to 0      &kp KP_NUMBER_0
+        &kp ESC       &trans    &kp UP            &trans        &kp HOME    &kp PG_UP        &kp KP_N7      &kp KP_N8  &kp KP_N9  &kp KP_PLUS
+        &kp LSHFT     &kp LEFT  &kp DOWN          &kp RIGHT     &kp END     &kp PG_DN        &kp KP_N4      &kp KP_N5  &kp KP_N6  &kp KP_MINUS
+&trans  &kp LEFT_GUI  &trans    &kp DEL           &trans        &kp CAPS    &kp KP_NUMBER_0  &kp KP_N1      &kp KP_N2  &kp KP_N3  &kp KP_MULTIPLY  &kp KP_EQUAL
+                                &kp LS(LEFT_GUI)  &kp LEFT_GUI  &trans      &kp ENTER        &kp BACKSPACE  &trans
             >;
         };
 
@@ -140,7 +186,7 @@
         &kp EXCL  &kp DOUBLE_QUOTES  &kp HASH   &kp DLLR   &kp PRCNT    &kp LBKT        &kp RBKT         &trans         &trans    &trans
         &kp AT    &kp SINGLE_QUOTE   &kp CARET  &kp COLON  &kp AMPS     &kp LPAR        &kp RPAR         &kp BACKSLASH  &kp PIPE  &trans
 &trans  &trans    &trans             &trans     &trans     &trans       &kp LEFT_BRACE  &kp RIGHT_BRACE  &trans         &trans    &trans  &trans
-                                     &trans     &trans     &mo 3        &trans          &to 0            &trans
+                                     &trans     &trans     &mo 3        &trans          &trans           &to 3
             >;
         };
 
@@ -166,7 +212,7 @@
         &sys_reset   &bt BT_CLR  &out OUT_TOG  &trans  &trans    &trans  &kp F7  &kp F8  &kp F9  &kp F12
         &bootloader  &bt BT_NXT  &trans        &trans  &trans    &trans  &kp F4  &kp F5  &kp F6  &kp F11
 &trans  &trans       &bt BT_PRV  &trans        &trans  &trans    &trans  &kp F1  &kp F2  &kp F3  &kp F10  &trans
-                                 &trans        &trans  &trans    &trans  &trans  &trans
+                                 &trans        &trans  &trans    &trans  &trans  &to 0
             >;
         };
     };
