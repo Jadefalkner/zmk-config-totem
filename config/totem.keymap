@@ -91,7 +91,6 @@
 
     combos {
         compatible = "zmk,combos";
-        q
 
         combo_esc {
             timeout-ms = <50>;
