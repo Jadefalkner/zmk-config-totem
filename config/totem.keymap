@@ -75,6 +75,7 @@
             compatible = "zmk,behavior-tap-dance";
             tapping-term-ms = <170>;
             bindings = <&kp A>, <&macro_0>;
+
             #binding-cells = <0>;
         };
 
@@ -82,6 +83,7 @@
             compatible = "zmk,behavior-tap-dance";
             tapping-term-ms = <170>;
             bindings = <&kp O>, <&macro_1>;
+
             #binding-cells = <0>;
         };
 
@@ -89,6 +91,7 @@
             compatible = "zmk,behavior-tap-dance";
             tapping-term-ms = <170>;
             bindings = <&kp U>, <&macro_2>;
+
             #binding-cells = <0>;
         };
     };
@@ -161,10 +164,10 @@
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-        &kp ESC       &trans    &kp UP            &trans        &kp HOME    &kp PG_UP        &kp KP_N7      &kp KP_N8  &kp KP_N9  &kp KP_PLUS
-        &kp LSHFT     &kp LEFT  &kp DOWN          &kp RIGHT     &kp END     &kp PG_DN        &kp KP_N4      &kp KP_N5  &kp KP_N6  &kp KP_MINUS
-&trans  &kp LEFT_GUI  &trans    &kp DEL           &trans        &kp CAPS    &kp KP_NUMBER_0  &kp KP_N1      &kp KP_N2  &kp KP_N3  &kp KP_MULTIPLY  &kp KP_EQUAL
-                                &kp LS(LEFT_GUI)  &kp LEFT_GUI  &trans      &kp ENTER        &kp BACKSPACE  &trans
+        &kp ESC       &trans    &kp UP            &trans        &kp HOME    &kp PG_UP  &kp N7         &kp N8        &kp N9        &kp KP_PLUS
+        &kp LSHFT     &kp LEFT  &kp DOWN          &kp RIGHT     &kp END     &kp PG_DN  &kp NUMBER_4   &kp N5        &kp NUMBER_6  &kp KP_MINUS
+&trans  &kp LEFT_GUI  &trans    &kp DEL           &trans        &kp CAPS    &kp N0     &kp N1         &kp NUMBER_2  &kp NUMBER_3  &kp PERIOD    &kp KP_EQUAL
+                                &kp LS(LEFT_GUI)  &kp LEFT_GUI  &trans      &kp ENTER  &kp BACKSPACE  &trans
             >;
         };
 
