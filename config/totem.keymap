@@ -111,6 +111,11 @@
             key-positions = <28 29>;
             layers = <0>;
         };
+
+        enter {
+            bindings = <&kp ENTER>;
+            key-positions = <16 17 18>;
+        };
     };
 
     macros {
@@ -138,10 +143,10 @@
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-       &kp Q  &kp W  &kp E            &kp R      &kp T        &kp Z    &td_4          &kp I      &td_3    &kp P
-       &td_2  &td_1  &kp D            &kp F      &kp G        &kp H    &kp J          &kp K      &kp L    &kp SEMI
-&td_0  &kp Y  &kp X  &kp C            &kp V      &kp B        &kp N    &kp M          &kp COMMA  &kp DOT  &kp MINUS  &kp SLASH
-                     &mt LC(DEL) DEL  &lt 2 TAB  &kp SPACE    &kp RET  &kp BACKSPACE  &mo 1
+       &kp Q  &kp W  &kp E             &kp R      &kp T        &kp Z  &td_4          &kp I      &td_3    &kp P
+       &td_2  &td_1  &kp D             &kp F      &kp G        &kp H  &kp J          &kp K      &kp L    &kp SEMI
+&td_0  &kp Y  &kp X  &kp C             &kp V      &kp B        &kp N  &kp M          &kp COMMA  &kp DOT  &kp MINUS  &kp SLASH
+                     &kp LEFT_CONTROL  &lt 2 TAB  &kp SPACE    &mo 2  &kp BACKSPACE  &mo 1
             >;
         };
 
@@ -221,6 +226,15 @@
 &trans  &trans       &bt BT_PRV  &trans        &trans  &trans    &trans  &kp F1  &kp F2  &kp F3  &kp F10  &trans
                                  &trans        &trans  &trans    &trans  &trans  &to 0
             >;
+        };
+    };
+
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+
+        fkeys {
+            if-layers = <1 2>;
+            then-layer = <3>;
         };
     };
 };
