@@ -146,7 +146,7 @@
        &kp Q  &kp W  &kp E             &kp R      &kp T        &kp Z  &td_4          &kp I      &td_3    &kp P
        &td_2  &td_1  &kp D             &kp F      &kp G        &kp H  &kp J          &kp K      &kp L    &kp SEMI
 &td_0  &kp Y  &kp X  &kp C             &kp V      &kp B        &kp N  &kp M          &kp COMMA  &kp DOT  &kp MINUS  &kp SLASH
-                     &kp LEFT_CONTROL  &lt 2 TAB  &kp SPACE    &mo 2  &kp BACKSPACE  &mo 1
+                     &kp LEFT_CONTROL  &lt 2 TAB  &kp SPACE    &mo 4  &kp BACKSPACE  &mo 1
             >;
         };
 
@@ -225,6 +225,15 @@
         &bootloader  &bt BT_NXT  &trans        &trans  &trans    &trans  &kp F4  &kp F5  &kp F6  &kp F11
 &trans  &trans       &bt BT_PRV  &trans        &trans  &trans    &trans  &kp F1  &kp F2  &kp F3  &kp F10  &trans
                                  &trans        &trans  &trans    &trans  &trans  &to 0
+            >;
+        };
+
+        navtwo {
+            bindings = <
+        &trans  &trans  &trans  &trans          &trans    &trans  &trans    &trans          &trans     &trans
+        &trans  &trans  &trans  &trans          &trans    &trans  &kp LEFT  &kp UP_ARROW    &kp RIGHT  &trans
+&trans  &trans  &trans  &trans  &trans          &trans    &trans  &kp DEL   &kp DOWN_ARROW  &trans     &trans  &trans
+                        &trans  &kp LEFT_SHIFT  &trans    &trans  &trans    &trans
             >;
         };
     };
