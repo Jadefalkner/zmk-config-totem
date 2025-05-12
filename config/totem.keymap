@@ -169,10 +169,10 @@
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-        &kp ESC       &trans    &kp UP            &trans        &kp HOME    &kp PG_UP  &kp N7         &kp N8        &kp N9        &kp KP_PLUS
-        &kp LSHFT     &kp LEFT  &kp DOWN          &kp RIGHT     &kp END     &kp PG_DN  &kp NUMBER_4   &kp N5        &kp NUMBER_6  &kp KP_MINUS
-&trans  &kp LEFT_GUI  &trans    &kp DEL           &trans        &kp CAPS    &kp N0     &kp N1         &kp NUMBER_2  &kp NUMBER_3  &kp PERIOD    &kp KP_EQUAL
-                                &kp LS(LEFT_GUI)  &kp LEFT_GUI  &trans      &kp ENTER  &kp BACKSPACE  &trans
+        &kp ESC        &trans    &kp UP            &trans        &kp HOME    &kp PG_UP  &kp N7         &kp N8        &kp N9        &kp KP_PLUS
+        &kp LSHFT      &kp LEFT  &kp DOWN          &kp RIGHT     &kp END     &kp PG_DN  &kp NUMBER_4   &kp N5        &kp NUMBER_6  &kp KP_MINUS
+&trans  &kp LA(ENTER)  &trans    &kp DEL           &trans        &kp CAPS    &kp N0     &kp N1         &kp NUMBER_2  &kp NUMBER_3  &kp PERIOD    &kp KP_EQUAL
+                                 &kp LS(LEFT_GUI)  &kp LEFT_GUI  &trans      &kp ENTER  &kp BACKSPACE  &trans
             >;
         };
 
@@ -230,10 +230,10 @@
 
         navtwo {
             bindings = <
-        &trans  &trans  &trans  &trans          &trans    &trans  &trans    &trans          &trans     &trans
-        &trans  &trans  &trans  &trans          &trans    &trans  &kp LEFT  &kp UP_ARROW    &kp RIGHT  &trans
-&trans  &trans  &trans  &trans  &trans          &trans    &trans  &kp DEL   &kp DOWN_ARROW  &trans     &trans  &trans
-                        &trans  &kp LEFT_SHIFT  &trans    &trans  &trans    &trans
+        &trans  &trans  &trans  &trans          &trans          &trans  &trans    &trans          &trans     &trans
+        &trans  &trans  &trans  &trans          &trans          &trans  &kp LEFT  &kp UP_ARROW    &kp RIGHT  &trans
+&trans  &trans  &trans  &trans  &trans          &trans          &trans  &kp DEL   &kp DOWN_ARROW  &trans     &trans  &trans
+                        &trans  &kp LEFT_SHIFT  &kp LEFT_GUI    &trans  &trans    &trans
             >;
         };
     };
