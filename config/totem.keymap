@@ -81,7 +81,7 @@
 
         td_3: behavior_tap_dance3 {
             compatible = "zmk,behavior-tap-dance";
-            tapping-term-ms = <170>;
+            tapping-term-ms = <140>;
             bindings = <&kp O>, <&macro_1>;
 
             #binding-cells = <0>;
@@ -93,6 +93,13 @@
             bindings = <&kp U>, <&macro_2>;
 
             #binding-cells = <0>;
+        };
+
+        td_5: td_5 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_5";
+            #binding-cells = <0>;
+            bindings = <&kp BACKSPACE>, <&kp LC(BACKSPACE)>;
         };
     };
 
@@ -143,10 +150,10 @@
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-       &kp Q  &kp W  &kp E             &kp R      &kp T        &kp Z  &td_4          &kp I      &td_3    &kp P
-       &td_2  &td_1  &kp D             &kp F      &kp G        &kp H  &kp J          &kp K      &kp L    &kp SEMI
-&td_0  &kp Y  &kp X  &kp C             &kp V      &kp B        &kp N  &kp M          &kp COMMA  &kp DOT  &kp MINUS  &kp SLASH
-                     &kp LEFT_CONTROL  &lt 2 TAB  &kp SPACE    &mo 4  &kp BACKSPACE  &mo 1
+       &kp Q  &kp W  &kp E             &kp R      &kp T        &kp Z  &td_4  &kp I      &td_3    &kp P
+       &td_2  &td_1  &kp D             &kp F      &kp G        &kp H  &kp J  &kp K      &kp L    &kp SEMI
+&td_0  &kp Y  &kp X  &kp C             &kp V      &kp B        &kp N  &kp M  &kp COMMA  &kp DOT  &kp MINUS  &kp SLASH
+                     &kp LEFT_CONTROL  &lt 2 TAB  &kp SPACE    &mo 4  &td_5  &mo 1
             >;
         };
 
