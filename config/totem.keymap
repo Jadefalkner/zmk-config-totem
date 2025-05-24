@@ -153,7 +153,7 @@
             #binding-cells = <0>;
             bindings = <&kp BACKSPACE>, <&kp LC(BACKSPACE)>;
 
-            tapping-term-ms = <120>;
+            tapping-term-ms = <110>;
         };
 
         td_ae: td_ae {
@@ -223,16 +223,11 @@
             //                                     ┃ L_CONTROL ┃ (2, TAB)  ┃ (3,SPACE) ┃   ┃   MO(4)   ┃   &td_5   ┃   MO(1)   ┃
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
-
-
-
-
-
             bindings = <
-       &kp Q  &kp W  &kp E             &kp R        &kp T             &kp Z       &td_4        &kp I      &td_3    &kp P
-       &td_2  &td_1  &kp D             &mt F LSHFT  &mt G LEFT_ALT    &mt H LALT  &mt J LSHFT  &kp K      &kp L    &kp SEMI
-&td_0  &kp Y  &kp X  &kp C             &kp V        &kp B             &kp N       &kp M        &kp COMMA  &kp DOT  &kp MINUS  &kp SLASH
-                     &kp LEFT_CONTROL  &lt 2 TAB    &lt 3 SPACE       &mo 4       &td_5        &mo 1
+       &kp Q  &kp W  &kp E             &kp R        &kp T             &kp Z           &td_4         &kp I       &td_3    &kp P
+       &td_2  &td_1  &mt LGUI D        &mt LSHFT F  &mt LEFT_ALT G    &mt LEFT_ALT H  &mt LSHIFT J  &mt LGUI K  &kp L    &kp SEMI
+&td_0  &kp Y  &kp X  &kp C             &kp V        &kp B             &kp N           &kp M         &kp COMMA   &kp DOT  &kp MINUS  &kp SLASH
+                     &kp LEFT_CONTROL  &lt 2 TAB    &lt 3 SPACE       &mo 4           &td_5         &mo 1
             >;
         };
 
@@ -253,8 +248,6 @@
             // ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
             //                                     ┃ LSHFT     ┃ LEFT_GUI  ┃ LA(ENTER) ┃   ┃   ENTER   ┃ BACKSPACE ┃ NONE      ┃
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
-
-
 
             bindings = <
             &bt BT_NXT  &bt BT_SEL 0  &bt BT_SEL 3  &none         &kp HOME         &kp PG_UP  &kp N7         &kp N8        &kp N9        &kp KP_PLUS
@@ -281,7 +274,6 @@
             // ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┫   ┣━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━╋━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
             //                                     ┃   NONE    ┃  NONE     ┃   TO(3)   ┃   ┃   NONE    ┃   NONE    ┃   TO(3)   ┃
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
-
 
             bindings = <
        &kp EXCL       &kp DOUBLE_QUOTES  &kp HASH   &kp DLLR   &kp PRCNT    &kp LBKT        &kp RBKT         &msc SCRL_UP    &mkp MB3        &mkp MB2
@@ -333,7 +325,7 @@
             //                                     ┃   NONE    ┃   LCMD    ┃ LG(ENTER) ┃   ┃   TRANS   ┃   TRANS   ┃  TRANS    ┃
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
-           bindings = <
+            bindings = <
               &kp F1  &kp F4  &kp F7  &kp F10   &none            &none   &none     &none           &none      &none
               &kp F2  &kp F5  &kp F8  &kp F11   &none            &none   &kp LEFT  &kp UP_ARROW    &kp RIGHT  &none
 &kp LEFT_ALT  &kp F3  &kp F6  &kp F9  &kp F12   &none            &none   &kp DEL   &kp DOWN_ARROW  &none      &none  &kp LEFT_SHIFT
