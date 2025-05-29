@@ -125,7 +125,7 @@
 
         td_1: behavior_tap_dance1 {
             compatible = "zmk,behavior-tap-dance";
-            tapping-term-ms = <100>;
+            tapping-term-ms = <120>;
             #binding-cells = <0>;
             bindings = <&kp S>, <&macro_3>;
         };
@@ -140,7 +140,7 @@
 
         td_3: behavior_tap_dance3 {
             compatible = "zmk,behavior-tap-dance";
-            tapping-term-ms = <150>;
+            tapping-term-ms = <130>;
             bindings = <&kp O>, <&macro_1>;
 
             #binding-cells = <0>;
@@ -160,7 +160,7 @@
             #binding-cells = <0>;
             bindings = <&kp BACKSPACE>, <&kp LC(BACKSPACE)>;
 
-            tapping-term-ms = <110>;
+            tapping-term-ms = <130>;
         };
 
         td_ae: td_ae {
