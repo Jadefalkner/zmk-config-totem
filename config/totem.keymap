@@ -188,7 +188,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "TD_AO";
             #binding-cells = <0>;
-            bindings = <&kp I>, <&td_ao>;
+            bindings = <&kp I>, <&schwedischumlaut>;
 
             tapping-term-ms = <170>;
         };
