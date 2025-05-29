@@ -107,6 +107,13 @@
             label = "MACOEUPPER";
         };
 
+        schwedischumlaut: schwedischumlaut {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp RA(W)>;
+            label = "SCHWEDISCHUMLAUT";
+        };
+
         // --- Tap Dance ---
 
         td_0: behavior_tap_dance0 {
@@ -176,6 +183,15 @@
             #binding-cells = <0>;
             bindings = <&macoe>, <&macoeupper>;
         };
+
+        td_ao: td_ao {
+            compatible = "zmk,behavior-tap-dance";
+            label = "TD_AO";
+            #binding-cells = <0>;
+            bindings = <&kp I>, <&td_ao>;
+
+            tapping-term-ms = <170>;
+        };
     };
 
     combos {
@@ -224,7 +240,7 @@
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-       &kp Q  &kp W  &kp E             &kp R        &kp T             &kp Z           &td_4         &kp I       &td_3    &kp P
+       &kp Q  &kp W  &kp E             &kp R        &kp T             &kp Z           &td_4         &td_ao      &td_3    &kp P
        &td_2  &td_1  &mt LGUI D        &mt LSHFT F  &mt LEFT_ALT G    &mt LEFT_ALT H  &mt LSHIFT J  &mt LGUI K  &kp L    &kp SEMI
 &td_0  &kp Y  &kp X  &kp C             &kp V        &kp B             &kp N           &kp M         &kp COMMA   &kp DOT  &kp MINUS  &kp SLASH
                      &kp LEFT_CONTROL  &lt 2 TAB    &lt 3 SPACE       &mo 4           &td_5         &mo 1
