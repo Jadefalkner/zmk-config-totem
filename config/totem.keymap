@@ -210,14 +210,14 @@
             key-positions = <16 17 18>;
         };
 
-        viout {
-            bindings = <&viout>;
-            key-positions = <0 1 2>;
-        };
-
         semi {
             bindings = <&kp SEMI>;
             key-positions = <29 28>;
+        };
+
+        nav {
+            bindings = <&mo 1>;
+            key-positions = <23 24>;
         };
     };
 
@@ -246,10 +246,10 @@
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-       &kp Q  &kp W  &kp E             &kp R        &kp T             &kp Z               &td_4            &td_ao      &td_3           &kp P
-       &td_2  &td_1  &mt LGUI D        &mt LSHFT F  &mt LEFT_ALT G    &mt LEFT_CONTROL H  &mt LSHIFT J     &mt LGUI K  &mt LEFT_ALT L  &kp SLASH
-&none  &kp Y  &kp X  &kp C             &kp V        &kp B             &kp N               &kp M            &kp COMMA   &kp DOT         &kp MINUS  &none
-                     &kp LEFT_CONTROL  &lt 2 TAB    &lt 3 SPACE       &lt 4 SPACE         &lt 1 BACKSPACE  &none
+       &kp Q  &kp W  &kp E             &kp R        &kp T             &kp Z               &td_4          &td_ao             &td_3           &kp P
+       &td_2  &td_1  &mt LGUI D        &mt LSHFT F  &mt LEFT_ALT G    &mt LEFT_CONTROL H  &mt LSHIFT J   &mt LGUI K         &mt LEFT_ALT L  &kp SLASH
+&none  &kp Y  &kp X  &kp C             &kp V        &kp B             &kp N               &kp M          &kp COMMA          &kp DOT         &kp MINUS  &none
+                     &kp LEFT_CONTROL  &lt 2 TAB    &lt 3 SPACE       &mo 4               &kp BACKSPACE  &kp LC(BACKSPACE)
             >;
         };
 
@@ -272,10 +272,10 @@
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-            &bt BT_NXT    &bt BT_SEL 0  &bt BT_SEL 3  &none         &kp HOME         &kp PG_UP  &kp N7         &kp N8        &kp N9        &kp KP_PLUS
-            &bt BT_PRV    &bt BT_SEL 1  &bt BT_SEL 4  &none         &kp END          &kp PG_DN  &kp NUMBER_4   &kp N5        &kp NUMBER_6  &kp KP_MINUS
-&bt BT_CLR  &out OUT_TOG  &bt BT_SEL 2  &none         &none         &kp CAPS         &kp N0     &kp N1         &kp NUMBER_2  &kp NUMBER_3  &kp PERIOD    &kp KP_EQUAL
-                                        &kp LSHFT     &kp LEFT_GUI  &kp LA(ENTER)    &kp ENTER  &kp BACKSPACE  &none
+       &bt BT_NXT    &bt BT_SEL 0  &bt BT_SEL 3  &bt BT_CLR            &kp HOME               &kp PG_UP  &kp N7         &kp N8        &kp N9        &kp KP_PLUS
+       &bt BT_PRV    &bt BT_SEL 1  &bt BT_SEL 4  &none                 &kp END                &kp PG_DN  &kp NUMBER_4   &kp N5        &kp NUMBER_6  &kp KP_MINUS
+&none  &out OUT_TOG  &bt BT_SEL 2  &none         &none                 &kp CAPS               &kp N0     &kp N1         &kp NUMBER_2  &kp NUMBER_3  &kp PERIOD    &kp KP_EQUAL
+                                   &none         &mt LEFT_SHIFT EQUAL  &mt LEFT_GUI PERIOD    &kp ENTER  &kp BACKSPACE  &none
             >;
         };
 
