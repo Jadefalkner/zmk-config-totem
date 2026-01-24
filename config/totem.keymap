@@ -348,10 +348,10 @@
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-              &kp F1  &kp F4  &kp F7  &kp F10   &none            &none      &kp HOME  &kp END         &kp INS    &none
-              &kp F2  &kp F5  &kp F8  &kp F11   &none            &kp PG_UP  &kp LEFT  &kp UP_ARROW    &kp RIGHT  &none
-&kp LEFT_ALT  &kp F3  &kp F6  &kp F9  &kp F12   &none            &kp PG_DN  &kp DEL   &kp DOWN_ARROW  &none      &none  &kp LEFT_SHIFT
-                              &trans  &kp LCMD  &kp LG(ENTER)    &trans     &trans    &trans
+              &kp F1  &kp F4  &kp F7       &kp F10   &none            &none      &kp HOME  &kp END         &kp INS    &none
+              &kp F2  &kp F5  &kp F8       &kp F11   &none            &kp PG_UP  &kp LEFT  &kp UP_ARROW    &kp RIGHT  &none
+&kp LEFT_ALT  &kp F3  &kp F6  &kp F9       &kp F12   &none            &kp PG_DN  &kp DEL   &kp DOWN_ARROW  &none      &none  &kp LEFT_SHIFT
+                              &bootloader  &kp LCMD  &kp LG(ENTER)    &trans     &trans    &bootloader
             >;
         };
     };
