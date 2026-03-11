@@ -13,6 +13,9 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
+
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 1800  // default: 600
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 30    // default: 10
 #include <dt-bindings/zmk/pointing.h>
 
 #define BASE 0
@@ -20,12 +23,10 @@
 #define SYM  2
 #define ADJ  3
 #define NAVTWO 4
-#define ZMK_POINTING_DEFAULT_MOVE_VAL 1800  // default: 600
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 30    // default: 10
 
 &mt {
     quick-tap-ms = <100>;
-    global-quick-tap;
+    require-prior-idle-ms = <150>;
     flavor = "tap-preferred";
     tapping-term-ms = <170>;
 };
@@ -38,7 +39,6 @@
             compatible = "zmk,behavior-macro";
             bindings = <&kp RA(Q)>;
             #binding-cells = <0>;
-            label = "macro0";
         };
 
         macro_1: macro1 {
@@ -59,60 +59,46 @@
             #binding-cells = <0>;
         };
 
-        viout: viout {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&kp ESCAPE &kp COLON &kp W &kp Q &kp ENTER>;
-            label = "VIOUT";
-        };
-
         macae: macae {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LA(U) &kp A>;
-            label = "MACAE";
         };
 
         macaeupper: macaeupper {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LA(U) &kp LS(A)>;
-            label = "MACAEUPPER";
         };
 
         macue: macue {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LA(U) &kp U>;
-            label = "MACUE";
         };
 
         macueupper: macueupper {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LA(U) &kp LS(U)>;
-            label = "MACUEUPPER";
         };
 
         macoe: macoe {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LA(U) &kp O>;
-            label = "MACOE";
         };
 
         macoeupper: macoeupper {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp LA(U) &kp LS(O)>;
-            label = "MACOEUPPER";
         };
 
         schwedischumlaut: schwedischumlaut {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&kp RA(W)>;
-            label = "SCHWEDISCHUMLAUT";
         };
 
         // --- Tap Dance ---
@@ -155,39 +141,26 @@
             #binding-cells = <0>;
         };
 
-        td_5: td_5 {
-            compatible = "zmk,behavior-tap-dance";
-            label = "TD_5";
-            #binding-cells = <0>;
-            bindings = <&kp BACKSPACE>, <&kp LC(BACKSPACE)>;
-
-            tapping-term-ms = <130>;
-        };
-
         td_ae: td_ae {
             compatible = "zmk,behavior-tap-dance";
-            label = "TD_AE";
             #binding-cells = <0>;
             bindings = <&macae>, <&macaeupper>;
         };
 
         td_ue: td_ue {
             compatible = "zmk,behavior-tap-dance";
-            label = "TD_UE";
             #binding-cells = <0>;
             bindings = <&macue>, <&macueupper>;
         };
 
         td_oe: td_oe {
             compatible = "zmk,behavior-tap-dance";
-            label = "TD_OE";
             #binding-cells = <0>;
             bindings = <&macoe>, <&macoeupper>;
         };
 
         td_ao: td_ao {
             compatible = "zmk,behavior-tap-dance";
-            label = "TD_AO";
             #binding-cells = <0>;
             bindings = <&kp I>, <&schwedischumlaut>;
 
@@ -219,9 +192,6 @@
             bindings = <&mo 1>;
             key-positions = <23 24>;
         };
-    };
-
-    macros {
     };
 
     keymap {
@@ -272,9 +242,9 @@
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-       &bt BT_NXT    &bt BT_SEL 0  &bt BT_SEL 3  &bt BT_CLR            &kp HOME               &kp PG_UP  &kp N7         &kp N8        &kp N9        &kp KP_PLUS
-       &bt BT_PRV    &bt BT_SEL 1  &bt BT_SEL 4  &none                 &kp END                &kp PG_DN  &kp NUMBER_4   &kp N5        &kp NUMBER_6  &kp KP_MINUS
-&none  &out OUT_TOG  &bt BT_SEL 2  &none         &none                 &kp CAPS               &kp N0     &kp N1         &kp NUMBER_2  &kp NUMBER_3  &kp PERIOD    &kp KP_EQUAL
+       &bt BT_NXT    &bt BT_SEL 0  &bt BT_SEL 3  &bt BT_CLR            &kp HOME               &kp PG_UP  &kp N7     &kp N8    &kp N9    &kp KP_PLUS
+       &bt BT_PRV    &bt BT_SEL 1  &bt BT_SEL 4  &none                 &kp END                &kp PG_DN  &kp N4     &kp N5    &kp N6    &kp KP_MINUS
+&none  &out OUT_TOG  &bt BT_SEL 2  &none         &none                 &kp CAPS               &kp N0     &kp N1     &kp N2    &kp N3    &kp PERIOD    &kp KP_EQUAL
                                    &none         &mt LEFT_SHIFT EQUAL  &mt LEFT_GUI PERIOD    &kp ENTER  &kp BACKSPACE  &none
             >;
         };
@@ -356,5 +326,4 @@
         };
     };
 
-    conditional_layers { compatible = "zmk,conditional-layers"; };
 };
