@@ -9,13 +9,13 @@
 //
 // ▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄▄
 
+#define ZMK_POINTING_DEFAULT_MOVE_VAL 1800  // default: 600
+#define ZMK_POINTING_DEFAULT_SCRL_VAL 30    // default: 10
+
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/outputs.h>
-
-#define ZMK_POINTING_DEFAULT_MOVE_VAL 1800  // default: 600
-#define ZMK_POINTING_DEFAULT_SCRL_VAL 30    // default: 10
 #include <dt-bindings/zmk/pointing.h>
 
 #define BASE 0
@@ -194,6 +194,9 @@
         };
     };
 
+    macros {
+    };
+
     keymap {
         compatible = "zmk,keymap";
 
@@ -242,10 +245,10 @@
             //                                     ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛   ┗━━━━━━━━━━━┻━━━━━━━━━━━┻━━━━━━━━━━━┛
 
             bindings = <
-       &bt BT_NXT    &bt BT_SEL 0  &bt BT_SEL 3  &bt BT_CLR            &kp HOME               &kp PG_UP  &kp N7     &kp N8    &kp N9    &kp KP_PLUS
-       &bt BT_PRV    &bt BT_SEL 1  &bt BT_SEL 4  &none                 &kp END                &kp PG_DN  &kp N4     &kp N5    &kp N6    &kp KP_MINUS
-&none  &out OUT_TOG  &bt BT_SEL 2  &none         &none                 &kp CAPS               &kp N0     &kp N1     &kp N2    &kp N3    &kp PERIOD    &kp KP_EQUAL
-                                   &none         &mt LEFT_SHIFT EQUAL  &mt LEFT_GUI PERIOD    &kp ENTER  &kp BACKSPACE  &none
+       &bt BT_NXT    &bt BT_SEL 0  &bt BT_SEL 3  &bt BT_CLR            &none                  &kp KP_EQUAL  &kp N7         &kp N8  &kp N9  &kp KP_PLUS
+       &bt BT_PRV    &bt BT_SEL 1  &bt BT_SEL 4  &none                 &none                  &kp PERIOD    &kp N4         &kp N5  &kp N6  &kp KP_MINUS
+&none  &out OUT_TOG  &bt BT_SEL 2  &none         &none                 &kp CAPS               &kp N0        &kp N1         &kp N2  &kp N3  &kp KP_EQUAL  &none
+                                   &none         &mt LEFT_SHIFT EQUAL  &mt LEFT_GUI PERIOD    &kp ENTER     &kp BACKSPACE  &none
             >;
         };
 
@@ -271,7 +274,7 @@
        &kp EXCL       &kp DOUBLE_QUOTES  &kp HASH   &kp DLLR   &kp PRCNT    &kp LBKT        &kp RBKT         &msc SCRL_UP    &mkp MB3        &mkp MB2
        &kp AT         &kp SINGLE_QUOTE   &kp CARET  &kp COLON  &kp AMPS     &kp LPAR        &kp RPAR         &msc SCRL_DOWN  &mkp MB1        &mmv MOVE_UP
 &none  &kp BACKSLASH  &kp GRAVE          &kp TILDE  &kp STAR   &kp PIPE     &kp LEFT_BRACE  &kp RIGHT_BRACE  &none           &mmv MOVE_LEFT  &mmv MOVE_DOWN  &mmv MOVE_RIGHT
-                                         &none      &none      &none        &none           &none            &none
+                                         &none      &none      &none        &kp C_VOL_DN    &kp C_VOLUME_UP  &kp C_MUTE
             >;
         };
 
@@ -325,5 +328,4 @@
             >;
         };
     };
-
 };
